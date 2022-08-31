@@ -1,0 +1,35 @@
+body,
+.container {
+ display: flex;
+}
+
+body {
+    background-color: aliceblue;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+#calc-body,
+#calc-buttons {
+    flex-direction: column;
+}
+
+#calc-body {
+    background-color:red;
+}
+
+#calc-display {
+    background-color: aqua;
+    height: 6em;
+}
+
+button {
+    width: 6em;
+    height: 6em;
+    margin: 0;
+}
+
+#zero {
+    width: 12em;
+}
