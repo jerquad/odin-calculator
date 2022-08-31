@@ -48,3 +48,21 @@ describe('divide', () => {
         expect(script.divide(8, 0)).toBe('err');
     });
 });
+
+describe('operate', () => {
+    test('returns addition', () => {
+        expect(script.operate('+', 10, 2)).toBe(12);
+    });
+    test('returns subtraction', () => {
+        expect(script.operate('-', 10, 2)).toBe(8);
+    });
+    test('returns multiplication', () => {
+        expect(script.operate('*', 10, 2)).toBe(20);
+    });
+    test('returns division', () => {
+        expect(script.operate('/', 10, 2)).toBe(5);
+    });
+    test('returns error', () => {
+        expect(script.operate('/', 10, 0)).toBe('err');
+    });
+});
