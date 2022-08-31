@@ -21,7 +21,8 @@ body {
 
 #calc-display {
     background-color: aqua;
-    height: 6em;
+    text-align: end;
+    padding: 1em 0;
 }
 
 button {
