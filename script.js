@@ -46,7 +46,7 @@ const operate = (function(opp, a, b) {
 /*  Updates the display value. sets limit for characters and 
     disallows more than one decimal at a time */
 const updateDisplay = (function(value) {
-    const charLimit = 8;
+    const charLimit = 9;
     const display = document.querySelector('#calc-display');
     if (display.textContent.length == charLimit) { return; }
     if (value == '.' && display.textContent.includes('.')) {
@@ -97,6 +97,7 @@ const equals = (function() {
 // Operation Buttons
 const getOp = (function(op) {
     let display = document.querySelector('#calc-display').textContent;
+    if (display == 'hello') { clear(); }
     if (display == 'NO WAY!' || display =='TOO MUCH!') { clear(); }
     if (holdValue != null) {
         nextOp = null;
@@ -114,8 +115,10 @@ document.querySelectorAll('.button-func').forEach((button) => {
 
 // Equals Button
 const eqButton = (function () {
+    let display = document.querySelector('#calc-display').textContent;
+    if (display == 'hello') { clear(); }
     nextOp = null;
-    document.querySelector('#calc-display').textContent = equals();
+    display = equals();
     holdValue = null;
     nextOp = '?';
 });
@@ -131,6 +134,7 @@ document.querySelector('#clear').addEventListener('click', (e) => {
 // Number Buttons
 const getNum = (function(num) {
     let display = document.querySelector('#calc-display').textContent;
+    if (display == 'hello') { clear(); }
     if (nextOp == '?' && holdValue == null) {
         clear();
     } else if (nextOp == '?') {
