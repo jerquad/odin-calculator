@@ -32,6 +32,9 @@ describe('multiply', () => {
     test('multiply by zero', () => {
         expect(script.multiply(5, 0)).toBe(0);
     });
+    test('modulo function', () => {
+        expect(script.mod(4, 3)).toBe(1);
+    });
 });
 
 describe('divide', () => {

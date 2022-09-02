@@ -1,13 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
+
 body,
 .container {
  display: flex;
 }
 
 body {
-    background-color: aliceblue;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    background-color: white;
     height: 100vh;
     justify-content: center;
     align-items: center;
+    margin: 0;
 }
 
 #calc-body,
@@ -20,17 +26,19 @@ body {
 }
 
 #calc-display {
-    background-color: aqua;
+    background-color: #c2fffe;
     text-align: end;
-    padding: 1em 0;
+    padding: 10px 5px;
 }
 
 button {
-    width: 6em;
-    height: 6em;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 40px;
+    width: 2em;
+    height: 2em;
     margin: 0;
 }
 
 #zero {
-    width: 12em;
+    width: 4em;
 }
