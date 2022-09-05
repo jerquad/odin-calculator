@@ -115,10 +115,10 @@ document.querySelectorAll('.button-func').forEach((button) => {
 
 // Equals Button
 const eqButton = (function () {
-    let display = document.querySelector('#calc-display').textContent;
-    if (display == 'hello') { clear(); }
+    let display = document.querySelector('#calc-display');
+    if (display.textContent == 'hello') { clear(); }
     nextOp = null;
-    display = equals();
+    display.textContent = equals();
     holdValue = null;
     nextOp = '?';
 });
@@ -175,7 +175,7 @@ document.addEventListener('keydown', (e) => {
     if ((e.key >= 0 && e.key < 10) || e.key == '.') {
         getNum(e.key);
     }
-    if (e.key == 'Enter') {
+    if (e.key == 'Enter' || e.code == 'NumpadEnter') {
         eqButton();
     }
     if (e.key == 'Backspace' ) {

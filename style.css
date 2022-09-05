@@ -9,7 +9,7 @@ body,
 body {
     font-family: 'Orbitron', sans-serif;
     font-size: 39px;
-    background-color: white;
+    background-color: rgb(219, 219, 219);
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -55,6 +55,7 @@ button {
     border-radius: 10px;
     border-top: .5px solid white;
     border-left: .5px solid white;
+    outline: none;
 }
 
 #button-num {
