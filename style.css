@@ -58,16 +58,19 @@ button {
     outline: none;
 }
 
-#button-num {
+.button-num {
+    color: black;
     background-color: white;
 }
 
 .button-func,
 #pos-neg {
+    color: black;
     background-color: #ffb005;
 }
 
 #clear {
+    color: black;
     background-color: #f73434;
 }
 

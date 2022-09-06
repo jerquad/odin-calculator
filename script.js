@@ -34,6 +34,8 @@ const operate = (function(opp, a, b) {
             return subtract(a,b);
         case '*':
             return multiply(a,b);
+        case '÷':
+            return divide(a,b);
         case '/':
             return divide(a,b);
         case '%':
@@ -116,7 +118,10 @@ document.querySelectorAll('.button-func').forEach((button) => {
 // Equals Button
 const eqButton = (function () {
     let display = document.querySelector('#calc-display');
-    if (display.textContent == 'hello') { clear(); }
+    if (display.textContent == 'hello') { 
+        clear();
+        return;
+    }
     nextOp = null;
     display.textContent = equals();
     holdValue = null;
@@ -170,26 +175,32 @@ document.querySelector('#pos-neg').addEventListener('click', (e) => {
     posNeg();
 });
 
+
 // Keyboard event bindings
 document.addEventListener('keydown', (e) => {
+    document.querySelectorAll('.disable-button').forEach((button) => {
+        button.disabled = true;
+    })
+    const ops = [`+`, `-`, `*`, `/`, `%`];
     if ((e.key >= 0 && e.key < 10) || e.key == '.') {
         getNum(e.key);
-    }
-    if (e.key == 'Enter' || e.code == 'NumpadEnter') {
+    } else if (ops.includes(e.key)) {
+        getOp(e.key);
+    } else if (e.code == 'Enter' || e.code == 'NumpadEnter') {
         eqButton();
-    }
-    if (e.key == 'Backspace' ) {
+    } else if (e.key == 'Backspace' ) {
         backSpace();
-    }
-    if (e.key == 'Delete') {
+    } else if (e.key == 'Delete') {
         clear();
-    }
-    if (e.key == '`') {
+    } else if (e.key == '`') {
         posNeg();
     }
-    const ops = [`+`, `-`, `*`, `/`, `%`];
-    if (ops.includes(e.key)) {
-        getOp(e.key);
-    }
-
 });
+['keyup', 'click'].forEach((action) => {
+    document.addEventListener(action, (e) => {
+        document.querySelectorAll('.disable-button').forEach((button) => {
+            button.disabled = false;
+        })
+    });    
+})
+ 
