@@ -82,7 +82,7 @@ const clear = (function() {
 /*  Parses variables and runs operations, edits return value to fit/limits,
     all operations are tacked to the end of the held variable */
 const equals = (function() {
-    if (holdValue == null || nextOp == '?') { return; }
+    if (holdValue == null || nextOp == '?') { return '0'; }
     let solution = operate(holdValue.charAt(holdValue.length - 1),
         holdValue.slice(0, -1),
         document.querySelector('#calc-display').textContent);
